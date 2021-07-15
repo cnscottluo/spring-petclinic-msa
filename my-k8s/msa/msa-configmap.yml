@@ -1,0 +1,17 @@
+# https://kubernetes.io/docs/concepts/configuration/configmap/
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: msa-config
+  namespace: default
+data:
+  DATASOURCE_URL: jdbc:mysql://mysql:3306/petclinic?useSSL=false
+  DATASOURCE_USERNAME: root
+  DATASOURCE_PASSWORD: petclinic
+  SPRING_PROFILES_ACTIVE: mysql
+  WEB_APP_ENDPOINT: http://webapp:8080
+  VETS_SERVICE_ENDPOINT: http://vets:8080
+  VISITS_SERVICE_ENDPOINT: http://visits:8080
+  CUSTOMERS_SERVICE_ENDPOINT: http://customers:8080
+  DATASOURCE_INIT_MODE: always
+---
